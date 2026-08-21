@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré-agendamento — Clínica Bem-Estar</title>
+    <meta name="description" content="Formulário de pré-agendamento online da Clínica Bem-Estar. Preencha seus dados e escolha a especialidade, data e observações.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="agendamento.html" class="cabecalho__marca">Clínica Bem-Estar</a>
+        <nav class="navegacao" aria-label="Navegação principal">
+            <ul class="navegacao__lista">
+                <li><a href="agendamento.html" class="navegacao__link navegacao__link--ativo" aria-current="page">Pré-agendamento</a></li>
+                <li><a href="equipe.html" class="navegacao__link">Nossa Equipe</a></li>
+                <li><a href="faq.html" class="navegacao__link">Dúvidas Frequentes</a></li>
+                <li><a href="como-chegar.html" class="navegacao__link">Como Chegar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="principal">
+        <section class="secao" aria-labelledby="agendamento-titulo">
+            <h1 id="agendamento-titulo" class="secao__titulo">Pré-agendamento Online</h1>
+            <p class="secao__subtitulo">Preencha o formulário abaixo para solicitar seu pré-agendamento. Nossa equipe entrará em contato para confirmar dia e horário.</p>
+
+            <form class="formulario" action="#" method="post" novalidate>
+                <fieldset class="campo">
+                    <legend class="campo__label">Dados Pessoais</legend>
+                    <div class="campo__dica">Campos marcados com * são obrigatórios.</div>
+                </fieldset>
+
+                <div class="campo">
+                    <label for="nome" class="campo__label campo__label--obrigatorio">Nome completo</label>
+                    <input type="text" id="nome" name="nome" class="campo__input" required autocomplete="name" placeholder="Ex.: Maria da Silva Santos" aria-describedby="dica-nome">
+                    <span id="dica-nome" class="campo__dica">Digite seu nome completo conforme documento.</span>
+                </div>
+
+                <div class="campo">
+                    <label for="telefone" class="campo__label campo__label--obrigatorio">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" class="campo__input" required autocomplete="tel" placeholder="Ex.: (11) 99999-9999" aria-describedby="dica-telefone">
+                    <span id="dica-telefone" class="campo__dica">DDD + número. Usado para confirmação do agendamento.</span>
+                </div>
+
+                <div class="campo">
+                    <label for="email" class="campo__label campo__label--obrigatorio">E-mail</label>
+                    <input type="email" id="email" name="email" class="campo__input" required autocomplete="email" placeholder="Ex.: maria@email.com" aria-describedby="dica-email">
+                    <span id="dica-email" class="campo__dica">Receberemos a confirmação neste endereço.</span>
+                </div>
+
+                <fieldset class="campo">
+                    <legend class="campo__label">Agendamento</legend>
+                </fieldset>
+
+                <div class="campo">
+                    <label for="especialidade" class="campo__label campo__label--obrigatorio">Especialidade</label>
+                    <select id="especialidade" name="especialidade" class="campo__select" required aria-describedby="dica-especialidade">
+                        <option value="">Selecione uma especialidade</option>
+                        <option value="cardiologia">Cardiologia</option>
+                        <option value="pediatria">Pediatria</option>
+                        <option value="ginecologia">Ginecologia e Obstetrícia</option>
+                        <option value="ortopedia">Ortopedia e Traumatologia</option>
+                        <option value="dermatologia">Dermatologia</option>
+                        <option value="neurologia">Neurologia</option>
+                    </select>
+                    <span id="dica-especialidade" class="campo__dica">Veja nossa <a href="equipe.html">equipe de especialistas</a> para conhecer cada profissional.</span>
+                </div>
+
+                <div class="campo">
+                    <label for="data" class="campo__label campo__label--obrigatorio">Data preferencial</label>
+                    <input type="date" id="data" name="data" class="campo__input" required aria-describedby="dica-data">
+                    <span id="dica-data" class="campo__dica">Escolha uma data a partir de amanhã. A confirmação depende da disponibilidade.</span>
+                </div>
+
+                <div class="campo">
+                    <label for="observacoes" class="campo__label">Observações</label>
+                    <textarea id="observacoes" name="observacoes" class="campo__textarea" placeholder="Ex.: Alergias, medicações em uso, preferência de horário, convênio..." aria-describedby="dica-observacoes"></textarea>
+                    <span id="dica-observacoes" class="campo__dica">Opcional. Informações que ajudem no seu atendimento (alergias, convênio, horário preferido, etc.).</span>
+                </div>
+
+                <button type="submit" class="botao">Solicitar Pré-agendamento</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Clínica Bem-Estar. Todos os direitos reservados.</p>
+        <p><a href="agendamento.html">Pré-agendamento</a> · <a href="equipe.html">Nossa Equipe</a> · <a href="faq.html">Dúvidas Frequentes</a> · <a href="como-chegar.html">Como Chegar</a></p>
+    </footer>
+</body>
+</html>
