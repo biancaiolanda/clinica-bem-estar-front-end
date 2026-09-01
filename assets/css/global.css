@@ -1,0 +1,184 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family: var(--font-family-primary);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+
+    line-height: 1.6;
+
+    color: var(--color-text);
+
+    background-color: var(--color-background);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--color-primary-dark);
+
+    text-decoration: none;
+
+    transition: color var(--transition-default);
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--color-primary-dark);
+    outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+
+    color: var(--color-text);
+
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-bold);
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+}
+
+h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+}
+
+ul,
+ol {
+    padding-left: var(--spacing-md);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(100% - 2rem, var(--container-width));
+
+    margin-inline: auto;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 0.75rem 1.5rem;
+
+    border: none;
+    border-radius: var(--border-radius-md);
+
+    font-weight: var(--font-weight-semibold);
+
+    text-align: center;
+
+    transition:
+        background-color var(--transition-default),
+        color var(--transition-default),
+        transform var(--transition-default);
+}
+
+.btn-primary {
+    color: var(--color-white);
+
+    background-color: var(--color-primary-dark);
+}
+
+.btn-primary:hover {
+    color: var(--color-white);
+
+    background-color: var(--color-primary);
+}
+
+.btn-primary:focus-visible {
+    outline: 3px solid var(--color-text);
+    outline-offset: 3px;
+}
+
+.card {
+    padding: var(--spacing-md);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+
+    background-color: var(--color-surface);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+label {
+    display: block;
+
+    margin-bottom: var(--spacing-xs);
+
+    font-weight: var(--font-weight-semibold);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 0.75rem 1rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+
+    color: var(--color-text);
+
+    background-color: var(--color-white);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-primary-dark);
+
+    outline: 3px solid var(--color-primary-light);
+}
+
+section {
+    padding-block: var(--spacing-xl);
+}

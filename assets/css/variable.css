@@ -1,0 +1,58 @@
+:root {
+    /* Cores principais */
+    --color-primary: #8EC5E8;
+    --color-primary-dark: #5A9BC6;
+    --color-primary-light: #DCEFF9;
+
+    /* Cores neutras */
+    --color-white: #FFFFFF;
+    --color-background: #F8FAFC;
+    --color-surface: #FFFFFF;
+
+    --color-text: #2F3A45;
+    --color-text-secondary: #5F6B76;
+    --color-border: #D9E1E8;
+
+    /* Estados */
+    --color-success: #3A8F65;
+    --color-error: #B54747;
+
+    /* Tipografia */
+    --font-family-primary: Arial, Helvetica, sans-serif;
+
+    --font-size-xs: 0.875rem;
+    --font-size-sm: 1rem;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.5rem;
+
+    /* Pesos */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Espaçamentos */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+
+    /* Bordas */
+    --border-radius-sm: 0.375rem;
+    --border-radius-md: 0.75rem;
+    --border-radius-lg: 1rem;
+
+    /* Sombras */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+    /* Largura de conteúdo */
+    --container-width: 1200px;
+
+    /* Transições */
+    --transition-default: 0.3s ease;
+}
