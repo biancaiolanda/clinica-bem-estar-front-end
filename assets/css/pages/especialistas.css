@@ -1,6 +1,3 @@
-/* =========================================
-   CABEÇALHO (Padronizado com faq.css)
-   ========================================= */
 body > header {
     position: sticky;
     top: 0;
@@ -43,11 +40,8 @@ body > header li a:focus-visible {
     color: var(--color-primary-dark);
 }
 
-/* =========================================
-   CONTEÚDO PRINCIPAL (Especialistas)
-   ========================================= */
 main {
-    width: min(100% - 2rem, 960px); /* Largura padronizada do faq.css */
+    width: min(100% - 2rem, 960px);
     margin: 0 auto;
     padding-block: var(--spacing-xl);
 }
@@ -147,9 +141,6 @@ article p strong {
     font-weight: var(--font-weight-semibold);
 }
 
-/* =========================================
-   RODAPÉ (Padronizado com faq.css)
-   ========================================= */
 body > footer {
     padding: var(--spacing-md) 0;
     text-align: center;
