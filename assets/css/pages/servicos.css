@@ -121,6 +121,17 @@
     margin-bottom: 0.5rem;
 }
 
+.rodape-principal a {
+    color: var(--color-white);
+    margin-inline: 0.4rem;
+}
+
+.rodape-principal a:hover,
+.rodape-principal a:focus-visible {
+    color: var(--color-primary-light);
+}
+
+
 @media (max-width: 640px) {
     .cabecalho-principal {
         padding-block: 1rem;
