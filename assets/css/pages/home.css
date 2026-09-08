@@ -105,6 +105,7 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--spacing-md);
     align-items: stretch;
+    padding-bottom: calc(var(--spacing-xl) + var(--spacing-lg));
 }
 
 .secao--diferenciais .secao__subtitulo {
