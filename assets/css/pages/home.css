@@ -183,8 +183,17 @@
     margin-bottom: 0.5rem;
 }
 
+.rodape ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .rodape a {
-    margin-inline: 0.4rem;
     color: var(--color-white);
 }
 
