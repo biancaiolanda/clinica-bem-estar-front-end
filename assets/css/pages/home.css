@@ -1,0 +1,204 @@
+.site-header {
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    min-height: 5rem;
+}
+
+.site-logo {
+    color: var(--color-primary-dark);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    white-space: nowrap;
+}
+
+.site-logo:hover {
+    color: var(--color-text);
+}
+
+.site-nav__list,
+.footer-nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-nav__list a,
+.footer-nav__list a {
+    display: inline-block;
+    padding: 0.5rem 0.65rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.site-nav__list a:hover,
+.site-nav__list a:focus-visible,
+.footer-nav__list a:hover,
+.footer-nav__list a:focus-visible {
+    color: var(--color-text);
+    background-color: var(--color-primary-light);
+}
+
+.hero {
+    padding-block: clamp(4rem, 10vw, 8rem);
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-white));
+}
+
+.hero__content {
+    max-width: 48rem;
+}
+
+.hero h1 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary-dark);
+}
+
+.hero p:first-of-type {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+}
+
+.hero p:nth-of-type(2) {
+    max-width: 42rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-md);
+}
+
+.narrow-content {
+    max-width: 50rem;
+}
+
+.mission {
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+.mission p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-md);
+}
+
+.differentials {
+    background-color: var(--color-background);
+}
+
+.differentials h2 {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.differentials > .container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--spacing-md);
+}
+
+.differentials > .container > h2 {
+    grid-column: 1 / -1;
+}
+
+.differential-card {
+    height: 100%;
+}
+
+.differential-card h3 {
+    color: var(--color-primary-dark);
+}
+
+.differential-card p {
+    margin-bottom: 0;
+    color: var(--color-text-secondary);
+}
+
+.appointment-cta {
+    color: var(--color-white);
+    background-color: var(--color-primary-dark);
+    text-align: center;
+}
+
+.appointment-cta h2 {
+    color: var(--color-white);
+}
+
+.appointment-cta p {
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-md);
+}
+
+.btn-light {
+    color: var(--color-primary-dark);
+    background-color: var(--color-white);
+}
+
+.btn-light:hover,
+.btn-light:focus-visible {
+    color: var(--color-text);
+    background-color: var(--color-primary-light);
+}
+
+.site-footer {
+    padding-block: var(--spacing-xl);
+    color: var(--color-white);
+    background-color: var(--color-text);
+    text-align: center;
+}
+
+.footer-nav__list {
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.site-footer a {
+    color: var(--color-white);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: var(--color-primary-light);
+    background-color: transparent;
+}
+
+.site-footer p {
+    margin-bottom: 0;
+    color: var(--color-primary-light);
+}
+
+@media (max-width: 900px) {
+    .site-header__inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-block: var(--spacing-md);
+    }
+
+    .differentials > .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .site-nav__list {
+        gap: 0.25rem;
+    }
+
+    .site-nav__list a {
+        padding-inline: 0.4rem;
+        font-size: var(--font-size-xs);
+    }
+
+    .differentials > .container {
+        grid-template-columns: 1fr;
+    }
+}
