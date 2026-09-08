@@ -104,6 +104,7 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--spacing-md);
+    align-items: start;
 }
 
 .secao--diferenciais .secao__subtitulo {
@@ -111,7 +112,8 @@
 }
 
 .diferencial-card {
-    height: 100%;
+    height: auto;
+    min-height: 0;
     padding: var(--spacing-md);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-md);
