@@ -8,57 +8,57 @@
 
     <title>Clínica Bem-Estar</title>
 
-    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/variable.css">
     <link rel="stylesheet" href="assets/css/pages/home.css">
 </head>
 
 <body>
 
-    <header class="site-header">
-        <div class="container site-header__inner">
-        <a class="site-logo" href="index.html" aria-label="Página inicial da Clínica Bem-Estar">
+    <header class="cabecalho">
+        <a class="cabecalho__marca" href="index.html" aria-label="Página inicial da Clínica Bem-Estar">
             Clínica Bem-Estar
         </a>
 
-        <nav class="site-nav" aria-label="Navegação principal">
-            <ul class="site-nav__list">
+        <nav class="navegacao" aria-label="Navegação principal">
+            <ul class="navegacao__lista">
                 <li>
-                    <a href="index.html">Início</a>
+                    <a class="menu-item" href="index.html">Início</a>
                 </li>
 
                 <li>
-                    <a href="pages/especialistas.html">Especialistas</a>
+                    <a class="menu-item" href="pages/especialistas.html">Especialistas</a>
                 </li>
 
                 <li>
-                    <a href="pages/servicos.html">Serviços</a>
+                    <a class="menu-item" href="pages/servicos.html">Serviços</a>
                 </li>
 
                 <li>
-                    <a href="pages/convenios.html">Convênios</a>
+                    <a class="menu-item" href="pages/convenios.html">Convênios</a>
                 </li>
 
                 <li>
-                    <a href="pages/agendamento.html">Pré-agendamento</a>
+                    <a class="menu-item" href="pages/agendamento.html">Pré-agendamento</a>
                 </li>
 
                 <li>
-                    <a href="pages/faq.html">FAQ</a>
+                    <a class="menu-item" href="pages/faq.html">FAQ</a>
                 </li>
 
                 <li>
-                    <a href="pages/como-chegar.html">Como Chegar</a>
+                    <a class="menu-item" href="pages/como-chegar.html">Como Chegar</a>
                 </li>
             </ul>
         </nav>
-        </div>
     </header>
 
-    <main>
+    <main class="principal">
 
-        <section class="hero" aria-labelledby="apresentacao-clinica">
-            <div class="container hero__content">
-            <h1 id="apresentacao-clinica">Clínica Bem-Estar</h1>
+        <section class="secao secao--hero" aria-labelledby="apresentacao-clinica">
+            <h1 id="apresentacao-clinica" class="secao__titulo">Clínica Bem-Estar</h1>
 
             <p>
                 Cuidado, acolhimento e atenção à saúde em um só lugar.
@@ -70,29 +70,25 @@
                 buscando proporcionar qualidade, segurança e acolhimento aos pacientes.
             </p>
 
-            <a class="btn btn-primary" href="pages/agendamento.html">
+            <a class="cta-principal" href="pages/agendamento.html">
                 Solicitar pré-agendamento
             </a>
-            </div>
         </section>
 
-        <section class="mission" aria-labelledby="nossa-missao">
-            <div class="container narrow-content">
-            <h2 id="nossa-missao">Nossa Missão</h2>
+        <section class="secao secao--missao" aria-labelledby="nossa-missao">
+            <h2 id="nossa-missao" class="secao__subtitulo">Nossa Missão</h2>
 
             <p>
                 Promover saúde e bem-estar por meio de um atendimento humanizado,
                 acessível e realizado por profissionais qualificados, respeitando
                 as necessidades individuais de cada paciente.
             </p>
-            </div>
         </section>
 
-        <section class="differentials" aria-labelledby="nossos-diferenciais">
-            <div class="container">
-            <h2 id="nossos-diferenciais">Nossos Diferenciais</h2>
+        <section class="secao secao--diferenciais" aria-labelledby="nossos-diferenciais">
+            <h2 id="nossos-diferenciais" class="secao__subtitulo">Nossos Diferenciais</h2>
 
-            <article class="card differential-card">
+            <article class="diferencial-card">
                 <h3>Atendimento Humanizado</h3>
 
                 <p>
@@ -101,7 +97,7 @@
                 </p>
             </article>
 
-            <article class="card differential-card">
+            <article class="diferencial-card">
                 <h3>Equipe Multidisciplinar</h3>
 
                 <p>
@@ -110,7 +106,7 @@
                 </p>
             </article>
 
-            <article class="card differential-card">
+            <article class="diferencial-card">
                 <h3>Acessibilidade</h3>
 
                 <p>
@@ -119,7 +115,7 @@
                 </p>
             </article>
 
-            <article class="card differential-card">
+            <article class="diferencial-card">
                 <h3>Facilidade no Atendimento</h3>
 
                 <p>
@@ -127,31 +123,27 @@
                     convênios e pré-agendamento.
                 </p>
             </article>
-            </div>
         </section>
 
-        <section class="appointment-cta" aria-labelledby="chamada-agendamento">
-            <div class="container narrow-content">
-            <h2 id="chamada-agendamento">Cuide da sua saúde</h2>
+        <section class="secao secao--cta" aria-labelledby="chamada-agendamento">
+            <h2 id="chamada-agendamento" class="secao__subtitulo">Cuide da sua saúde</h2>
 
             <p>
                 Consulte nossas especialidades e solicite seu pré-agendamento
                 de forma simples.
             </p>
 
-            <a class="btn btn-light" href="pages/agendamento.html">
+            <a class="cta-secundaria" href="pages/agendamento.html">
                 Fazer pré-agendamento
             </a>
-            </div>
         </section>
 
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
+    <footer class="rodape">
 
-        <nav class="footer-nav" aria-label="Navegação do rodapé">
-            <ul class="footer-nav__list">
+        <nav aria-label="Navegação do rodapé">
+            <ul>
                 <li>
                     <a href="index.html">Início</a>
                 </li>
@@ -185,7 +177,6 @@
         <p>
             &copy; 2026 Clínica Bem-Estar. Todos os direitos reservados.
         </p>
-        </div>
     </footer>
 
 </body>
