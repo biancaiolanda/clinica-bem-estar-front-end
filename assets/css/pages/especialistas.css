@@ -148,24 +148,13 @@ body > footer {
     color: var(--color-white);
 }
 
-body > footer ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem 1rem;
-    padding: 0;
-    margin: 0 0 1rem 0;
-    list-style: none;
-}
-
 body > footer p {
     margin-bottom: 0.5rem;
 }
 
 body > footer a {
     color: var(--color-white);
-    text-decoration: none;
-    padding: 0.2rem 0.5rem;
+    margin-inline: 0.4rem;
 }
 
 body > footer a:hover,
