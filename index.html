@@ -7,16 +7,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Clínica Bem-Estar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/variable.css">
+    <link rel="stylesheet" href="assets/css/pages/home.css">
 </head>
 
 <body>
 
-    <header>
-        <a href="index.html" aria-label="Página inicial da Clínica Bem-Estar">
+    <header class="cabecalho">
+        <a class="cabecalho__marca" href="index.html" aria-label="Página inicial da Clínica Bem-Estar">
             Clínica Bem-Estar
         </a>
 
-        <nav aria-label="Navegação principal">
+        <nav class="navegacao" aria-label="Navegação principal">
+            <ul class="navegacao__lista">
+                <li>
+                    <a class="menu-item" href="index.html">Início</a>
+                </li>
+
+                <li>
+                    <a class="menu-item" href="pages/especialistas.html">Especialistas</a>
+                </li>
+
+                <li>
+                    <a class="menu-item" href="pages/servicos.html">Serviços</a>
+                </li>
+
+                <li>
+                    <a class="menu-item" href="pages/convenios.html">Convênios</a>
+                </li>
+
+                <li>
+                    <a class="menu-item" href="pages/agendamento.html">Pré-agendamento</a>
+                </li>
+
+                <li>
+                    <a class="menu-item" href="pages/faq.html">FAQ</a>
+                </li>
+
+                <li>
+                    <a class="menu-item" href="pages/como-chegar.html">Como Chegar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="principal">
+
+        <section class="secao secao--hero" aria-labelledby="apresentacao-clinica">
+            <h1 id="apresentacao-clinica" class="secao__titulo">Clínica Bem-Estar</h1>
+
+            <p>
+                Cuidado, acolhimento e atenção à saúde em um só lugar.
+            </p>
+
+            <p>
+                A Clínica Bem-Estar é uma clínica multidisciplinar que oferece
+                atendimento especializado para diferentes necessidades de saúde,
+                buscando proporcionar qualidade, segurança e acolhimento aos pacientes.
+            </p>
+
+            <a class="cta-principal" href="pages/agendamento.html">
+                Solicitar pré-agendamento
+            </a>
+        </section>
+
+        <section class="secao secao--missao" aria-labelledby="nossa-missao">
+            <h2 id="nossa-missao" class="secao__subtitulo">Nossa Missão</h2>
+
+            <p>
+                Promover saúde e bem-estar por meio de um atendimento humanizado,
+                acessível e realizado por profissionais qualificados, respeitando
+                as necessidades individuais de cada paciente.
+            </p>
+        </section>
+
+        <section class="secao secao--diferenciais" aria-labelledby="nossos-diferenciais">
+            <h2 id="nossos-diferenciais" class="secao__subtitulo">Nossos Diferenciais</h2>
+
+            <article class="diferencial-card">
+                <h3>Atendimento Humanizado</h3>
+
+                <p>
+                    Valorizamos um atendimento acolhedor, respeitoso e individualizado
+                    para cada paciente.
+                </p>
+            </article>
+
+            <article class="diferencial-card">
+                <h3>Equipe Multidisciplinar</h3>
+
+                <p>
+                    Contamos com profissionais de diferentes especialidades para
+                    proporcionar um atendimento mais completo.
+                </p>
+            </article>
+
+            <article class="diferencial-card">
+                <h3>Acessibilidade</h3>
+
+                <p>
+                    Buscamos oferecer uma experiência acessível e de fácil utilização
+                    para diferentes perfis de pacientes.
+                </p>
+            </article>
+
+            <article class="diferencial-card">
+                <h3>Facilidade no Atendimento</h3>
+
+                <p>
+                    Disponibilizamos informações claras sobre especialistas, serviços,
+                    convênios e pré-agendamento.
+                </p>
+            </article>
+        </section>
+
+        <section class="secao secao--cta" aria-labelledby="chamada-agendamento">
+            <h2 id="chamada-agendamento" class="secao__subtitulo">Cuide da sua saúde</h2>
+
+            <p>
+                Consulte nossas especialidades e solicite seu pré-agendamento
+                de forma simples.
+            </p>
+
+            <a class="cta-secundaria" href="pages/agendamento.html">
+                Fazer pré-agendamento
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>
+            &copy; 2026 Clínica Bem-Estar. Todos os direitos reservados.
+        </p>
+
+        <nav aria-label="Navegação do rodapé">
             <ul>
                 <li>
                     <a href="index.html">Início</a>
@@ -36,113 +165,6 @@
 
                 <li>
                     <a href="pages/agendamento.html">Pré-agendamento</a>
-                </li>
-
-                <li>
-                    <a href="pages/faq.html">FAQ</a>
-                </li>
-
-                <li>
-                    <a href="pages/como-chegar.html">Como Chegar</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-
-        <section aria-labelledby="apresentacao-clinica">
-            <h1 id="apresentacao-clinica">Clínica Bem-Estar</h1>
-
-            <p>
-                Cuidado, acolhimento e atenção à saúde em um só lugar.
-            </p>
-
-            <p>
-                A Clínica Bem-Estar é uma clínica multidisciplinar que oferece
-                atendimento especializado para diferentes necessidades de saúde,
-                buscando proporcionar qualidade, segurança e acolhimento aos pacientes.
-            </p>
-
-            <a href="pages/agendamento.html">
-                Solicitar pré-agendamento
-            </a>
-        </section>
-
-        <section aria-labelledby="nossa-missao">
-            <h2 id="nossa-missao">Nossa Missão</h2>
-
-            <p>
-                Promover saúde e bem-estar por meio de um atendimento humanizado,
-                acessível e realizado por profissionais qualificados, respeitando
-                as necessidades individuais de cada paciente.
-            </p>
-        </section>
-
-        <section aria-labelledby="nossos-diferenciais">
-            <h2 id="nossos-diferenciais">Nossos Diferenciais</h2>
-
-            <article>
-                <h3>Atendimento Humanizado</h3>
-
-                <p>
-                    Valorizamos um atendimento acolhedor, respeitoso e individualizado
-                    para cada paciente.
-                </p>
-            </article>
-
-            <article>
-                <h3>Equipe Multidisciplinar</h3>
-
-                <p>
-                    Contamos com profissionais de diferentes especialidades para
-                    proporcionar um atendimento mais completo.
-                </p>
-            </article>
-
-            <article>
-                <h3>Acessibilidade</h3>
-
-                <p>
-                    Buscamos oferecer uma experiência acessível e de fácil utilização
-                    para diferentes perfis de pacientes.
-                </p>
-            </article>
-
-            <article>
-                <h3>Facilidade no Atendimento</h3>
-
-                <p>
-                    Disponibilizamos informações claras sobre especialistas, serviços,
-                    convênios e pré-agendamento.
-                </p>
-            </article>
-        </section>
-
-        <section aria-labelledby="chamada-agendamento">
-            <h2 id="chamada-agendamento">Cuide da sua saúde</h2>
-
-            <p>
-                Consulte nossas especialidades e solicite seu pré-agendamento
-                de forma simples.
-            </p>
-
-            <a href="pages/agendamento.html">
-                Fazer pré-agendamento
-            </a>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>
-            &copy; 2026 Clínica Bem-Estar. Todos os direitos reservados.
-        </p>
-
-        <nav aria-label="Navegação do rodapé">
-            <ul>
-                <li>
-                    <a href="index.html">Início</a>
                 </li>
 
                 <li>
