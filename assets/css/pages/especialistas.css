@@ -32,16 +32,22 @@ body > header li a {
     border-radius: var(--border-radius-sm);
     color: var(--color-text);
     font-weight: var(--font-weight-semibold);
+    transition:
+        background-color var(--transition-default),
+        color var(--transition-default),
+        transform var(--transition-default);
 }
 
 body > header li a:hover,
 body > header li a:focus-visible {
     background-color: var(--color-primary-light);
     color: var(--color-primary-dark);
+    transform: translateY(-2px);
 }
 
 main {
     width: min(100% - 2rem, 960px);
+    min-width: 0;
     margin: 0 auto;
     padding-block: var(--spacing-xl);
 }
@@ -72,7 +78,7 @@ section[aria-labelledby="lista-especialistas"] h2 {
 
 section[aria-labelledby="lista-especialistas"] {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
     gap: var(--spacing-lg);
     align-items: start;
 }
@@ -106,11 +112,14 @@ article img {
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid var(--color-primary-light);
-    transition: border-color var(--transition-default);
+    transition:
+        border-color var(--transition-default),
+        transform var(--transition-default);
 }
 
 article:hover img {
     border-color: var(--color-primary);
+    transform: scale(1.04) rotate(1deg);
 }
 
 article figcaption {
@@ -153,13 +162,28 @@ body > footer p {
 }
 
 body > footer a {
+    display: inline-block;
     color: var(--color-white);
     margin-inline: 0.4rem;
+    transition:
+        color var(--transition-default),
+        transform var(--transition-default);
 }
 
 body > footer a:hover,
 body > footer a:focus-visible {
     color: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1023px) {
+    main {
+        padding-block: var(--spacing-lg);
+    }
+
+    section[aria-labelledby="lista-especialistas"] {
+        gap: var(--spacing-md);
+    }
 }
 
 @media (max-width: 640px) {
@@ -169,5 +193,18 @@ body > footer a:focus-visible {
     body > header ul {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    main {
+        width: min(100% - 1rem, 960px);
+    }
+
+    section[aria-labelledby="lista-especialistas"] {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    article {
+        padding: var(--spacing-sm);
     }
 }
