@@ -8,6 +8,11 @@ body > header {
     box-shadow: var(--shadow-sm);
 }
 
+body > header nav {
+    width: min(100% - 2rem, 960px);
+    margin-inline: auto;
+}
+
 body > header nav > a:first-child {
     display: inline-block;
     margin-bottom: 0.75rem;
@@ -58,6 +63,7 @@ main > header {
 }
 
 main > header h1 {
+    font-size: clamp(1.75rem, 5vw, var(--font-size-xxl));
     color: var(--color-primary-dark);
     margin-bottom: var(--spacing-xs);
 }
@@ -162,13 +168,21 @@ body > footer {
 }
 
 body > footer p {
-    margin-bottom: 0.5rem;
+    width: min(100% - 2rem, 960px);
+    margin: 0 auto 0.5rem;
+}
+
+body > footer p:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 0.5rem;
 }
 
 body > footer a {
     display: inline-block;
     color: var(--color-white);
-    margin-inline: 0.4rem;
+    padding: 0.625rem 0.75rem;
     transition:
         color var(--transition-default),
         transform var(--transition-default);
@@ -193,11 +207,26 @@ body > footer a:focus-visible {
 
 @media (max-width: 640px) {
     body > header {
+        position: static;
         padding-block: 1rem;
     }
+
     body > header ul {
-        flex-direction: column;
-        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    body > header li {
+        flex: 1 1 calc(50% - 0.25rem);
+        min-width: 0;
+    }
+
+    body > header li a {
+        display: block;
+        overflow-wrap: anywhere;
+    }
+
+    main > header {
+        margin-bottom: var(--spacing-lg);
     }
 
     main {
@@ -211,5 +240,11 @@ body > footer a:focus-visible {
 
     article {
         padding: var(--spacing-sm);
+    }
+}
+
+@media (max-height: 500px) {
+    body > header {
+        position: static;
     }
 }
