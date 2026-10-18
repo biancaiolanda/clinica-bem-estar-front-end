@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .cabecalho-principal {
     position: sticky;
     top: 0;
@@ -51,6 +57,8 @@
     border-bottom: 2px solid var(--color-primary-light);
     padding-bottom: var(--spacing-xs);
     margin-bottom: var(--spacing-md);
+    font-size: clamp(1.75rem, 6vw, 2rem);
+    overflow-wrap: break-word;
 }
 
 .descricao-secao {
@@ -61,7 +69,7 @@
 
 .grade-servicos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--spacing-lg);
     align-items: start;
 }
@@ -78,20 +86,24 @@
     transition: transform var(--transition-default), box-shadow var(--transition-default);
 }
 
-.cartao-servico:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+@media (hover: hover) {
+    .cartao-servico:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+    }
 }
 
 .titulo-servico {
     color: var(--color-primary-dark);
     margin-bottom: var(--spacing-sm);
+    overflow-wrap: break-word;
 }
 
 .texto-servico {
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-md);
     flex-grow: 1;
+    overflow-wrap: break-word;
 }
 
 .lista-detalhes {
@@ -104,6 +116,7 @@
     color: var(--color-text);
     margin-bottom: var(--spacing-xs);
     font-size: var(--font-size-sm);
+    overflow-wrap: break-word;
 }
 
 .lista-detalhes li::marker {
@@ -131,13 +144,67 @@
     color: var(--color-primary-light);
 }
 
+@media (max-width: 900px) {
+    .grade-servicos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cartao-servico:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+}
+
 
 @media (max-width: 640px) {
+
     .cabecalho-principal {
-        padding-block: 1rem;
+        position: static;
+        padding: 1rem var(--spacing-sm);
     }
+
+    .cabecalho-principal > a {
+        margin-bottom: 0.5rem;
+    }
+
     .menu-lista {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem 0.5rem;
+    }
+
+    .menu-item a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.75rem;
+        padding: 0 0.75rem;
+        font-size: var(--font-size-xs);
+    }
+
+    .conteudo-principal {
+        padding-block: var(--spacing-lg);
+    }
+
+    .descricao-secao {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .grade-servicos {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .cartao-servico {
+        padding: var(--spacing-md);
+    }
+
+    .rodape-principal {
+        padding-inline: var(--spacing-sm);
+    }
+
+    .rodape-principal a {
+        display: inline-block;
+        padding: 0.375rem 0.25rem;
     }
 }
