@@ -127,6 +127,7 @@
 }
 
 .faq-item__texto {
+    overflow-wrap: anywhere;
     margin-bottom: 0;
     color: var(--color-text);
 }
