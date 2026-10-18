@@ -14,7 +14,9 @@ body > header nav {
 }
 
 body > header nav > a:first-child {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     margin-bottom: 0.75rem;
     color: var(--color-primary-dark);
     font-size: var(--font-size-lg);
@@ -216,13 +218,13 @@ body > footer a:focus-visible {
     }
 
     body > header li {
-        flex: 1 1 calc(50% - 0.25rem);
+        flex: 1 0 auto;
         min-width: 0;
     }
 
     body > header li a {
         display: block;
-        overflow-wrap: anywhere;
+        white-space: nowrap;
     }
 
     main > header {
