@@ -41,21 +41,28 @@
 
     color: var(--color-text);
     font-weight: var(--font-weight-semibold);
+    transition:
+        background-color var(--transition-default),
+        color var(--transition-default),
+        transform var(--transition-default);
 }
 
 .menu-item a:hover,
 .menu-item a:focus-visible {
     background-color: var(--color-primary-light);
     color: var(--color-primary-dark);
+    transform: translateY(-2px);
 }
 
 .principal {
     width: min(100% - 2rem, 960px);
+    min-width: 0;
     margin: 0 auto;
     padding-block: var(--spacing-xl);
 }
 
 .secao {
+    min-width: 0;
     padding: var(--spacing-xl);
 
     border: 1px solid var(--color-border);
@@ -85,12 +92,21 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+    width: 100%;
 }
 
 .campo {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    min-width: 0;
+}
+
+fieldset.campo {
+    min-inline-size: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .campo__label {
@@ -112,6 +128,8 @@
 .campo__select,
 .campo__textarea {
     width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     padding: 0.8rem 1rem;
 
     border: 1px solid var(--color-border);
@@ -119,6 +137,9 @@
 
     color: var(--color-text);
     background-color: var(--color-white);
+    transition:
+        border-color var(--transition-default),
+        box-shadow var(--transition-default);
 }
 
 .campo__input:focus,
@@ -146,11 +167,14 @@
     font-weight: var(--font-weight-semibold);
     transition:
         background-color var(--transition-default),
+        box-shadow var(--transition-default),
         transform var(--transition-default);
 }
 
 .botao:hover {
     background-color: var(--color-primary);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: var(--shadow-sm);
 }
 
 .botao:focus-visible {
@@ -176,13 +200,28 @@
 }
 
 .rodape a {
+    display: inline-block;
     color: var(--color-white);
     margin-inline: 0.4rem;
+    transition:
+        color var(--transition-default),
+        transform var(--transition-default);
 }
 
 .rodape a:hover,
 .rodape a:focus-visible {
     color: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1023px) {
+    .principal {
+        padding-block: var(--spacing-lg);
+    }
+
+    .secao {
+        padding: var(--spacing-lg);
+    }
 }
 
 @media (max-width: 640px) {
@@ -200,10 +239,14 @@
     }
 
     .secao {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
     }
 
     .botao {
         width: 100%;
+    }
+
+    .campo__dica {
+        overflow-wrap: anywhere;
     }
 }
