@@ -24,14 +24,12 @@ Semanas 8 a 10.
 
 ## Decisões realizadas
 
-- xxxxxxxxxxxxxxxxxxxxxxx
-- xxxxxxxxxxxxxxxxxxxxxxx
-- xxxxxxxxxxxxxxxxxxxxxxx
-- xxxxxxxxxxxxxxxxxxxxxxx
+- US-303: No celular o cabeçalho deixa de ser fixo e o menu quebra em linhas, para não cobrir o conteúdo.
+- Efeitos de hover aplicados apenas em dispositivos com mouse.
 
 ## Testes realizados
 
-- xxxxxxxxxxxxxxxxxxxxxxx
+- US-303: páginas Serviços e Convênios testadas no DevTools nas larguras 320, 360, 414, 640, 768, 900, 1024 e 1280px, sem rolagem horizontal e sem sobreposição de elementos.
 - xxxxxxxxxxxxxxxxxxxxxxx
 - xxxxxxxxxxxxxxxxxxxxxxx.
 - xxxxxxxxxxxxxxxxxxxxxxx
