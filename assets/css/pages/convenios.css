@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .cabecalho-principal {
     position: sticky;
     top: 0;
@@ -32,12 +38,17 @@
     border-radius: var(--border-radius-sm);
     color: var(--color-text);
     font-weight: var(--font-weight-semibold);
+    transition:
+        background-color var(--transition-default),
+        color var(--transition-default),
+        transform var(--transition-default);
 }
 
 .menu-item a:hover,
 .menu-item a:focus-visible {
     background-color: var(--color-primary-light);
     color: var(--color-primary-dark);
+    transform: translateY(-2px);
 }
 
 .conteudo-principal {
@@ -52,6 +63,8 @@
     padding-bottom: var(--spacing-xs);
     margin-bottom: var(--spacing-md);
     text-align: center;
+    font-size: clamp(1.75rem, 6vw, 2rem);
+    overflow-wrap: break-word;
 }
 
 .descricao-secao {
@@ -63,7 +76,7 @@
 
 .grade-convenios {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--spacing-lg);
     padding: 0;
     margin: 0;
@@ -75,6 +88,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-width: 0;
     padding: var(--spacing-lg);
     background-color: var(--color-white);
     border: 1px solid var(--color-border);
@@ -83,13 +97,22 @@
     transition: transform var(--transition-default), border-color var(--transition-default), box-shadow var(--transition-default);
 }
 
-.cartao-convenio:hover {
-    transform: translateY(-5px);
+@media (hover: hover) {
+    .cartao-convenio:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-primary-dark);
+        box-shadow: var(--shadow-md);
+    }
+}
+
+.cartao-convenio:focus-within {
+    transform: translateY(-3px);
     border-color: var(--color-primary-dark);
     box-shadow: var(--shadow-md);
 }
 
 .logo-convenio {
+    width: 100%;
     max-width: 150px;
     height: 80px;
     object-fit: contain;
@@ -98,9 +121,21 @@
     transition: filter var(--transition-default), transform var(--transition-default);
 }
 
-.cartao-convenio:hover .logo-convenio {
-    filter: grayscale(0%) opacity(1);
-    transform: scale(1.05);
+@media (hover: hover) {
+    .cartao-convenio:hover .logo-convenio {
+        filter: grayscale(0%) opacity(1);
+        transform: scale(1.05);
+    }
+
+    .cartao-convenio:hover .nome-convenio {
+        color: var(--color-primary-dark);
+    }
+}
+
+@media (hover: none) {
+    .logo-convenio {
+        filter: none;
+    }
 }
 
 .nome-convenio {
@@ -108,11 +143,9 @@
     font-weight: var(--font-weight-semibold);
     color: var(--color-text-secondary);
     font-size: var(--font-size-sm);
+    text-align: center;
+    overflow-wrap: break-word;
     transition: color var(--transition-default);
-}
-
-.cartao-convenio:hover .nome-convenio {
-    color: var(--color-primary-dark);
 }
 
 .rodape-principal {
@@ -127,22 +160,116 @@
 }
 
 .rodape-principal a {
+    display: inline-block;
     color: var(--color-white);
     margin-inline: 0.4rem;
+    transition:
+        color var(--transition-default),
+        transform var(--transition-default);
 }
 
 .rodape-principal a:hover,
 .rodape-principal a:focus-visible {
     color: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1023px) {
+    .conteudo-principal {
+        padding-block: var(--spacing-lg);
+    }
+
+    .grade-convenios {
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 900px) {
+    .grade-convenios {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 640px) {
     .cabecalho-principal {
-        padding-block: 1rem;
+        position: static;
+        padding: 1rem var(--spacing-sm);
+    }
+
+    .cabecalho-principal>a {
+        margin-bottom: 0.5rem;
     }
 
     .menu-lista {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem 0.5rem;
+    }
+
+    .menu-item a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.75rem;
+        padding: 0 0.75rem;
+        font-size: var(--font-size-xs);
+    }
+
+    .conteudo-principal {
+        padding-block: var(--spacing-lg);
+    }
+
+    .descricao-secao {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .grade-convenios {
+        gap: var(--spacing-sm);
+    }
+
+    .cartao-convenio {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .logo-convenio {
+        height: 56px;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .nome-convenio {
+        font-size: var(--font-size-xs);
+    }
+
+    .rodape-principal {
+        padding-inline: var(--spacing-sm);
+    }
+
+    .rodape-principal a {
+        display: inline-block;
+        padding: 0.375rem 0.25rem;
+    }
+}
+
+@media (max-width: 359px) {
+    .grade-convenios {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .logo-convenio {
+        height: 64px;
+    }
+
+    .conteudo-principal {
+        width: min(100% - 1rem, 960px);
+    }
+
+    .grade-convenios {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .cartao-convenio {
+        padding: var(--spacing-md);
     }
 }

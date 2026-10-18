@@ -56,3 +56,37 @@
     /* Transições */
     --transition-default: 0.3s ease;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+body > main {
+    flex: 1 0 auto;
+}
+
+body header nav ul li.menu-item a,
+body header nav ul li a,
+body header nav ul a.menu-item {
+    padding: 0.625rem 0.9375rem;
+    font-size: 1.25em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

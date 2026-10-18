@@ -1,0 +1,57 @@
+/* Navegação compartilhada entre as páginas institucionais. */
+body > header nav {
+    width: min(100% - 2rem, 960px);
+    margin-inline: auto;
+}
+
+body > header > a {
+    display: flex;
+    align-items: center;
+    width: min(100% - 2rem, 960px);
+    min-height: 44px;
+    margin-inline: auto;
+}
+
+body > header nav ul li a,
+body > footer a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+
+body > header a:focus-visible,
+body > footer a:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+    body > header,
+    body > header[class] {
+        position: static;
+    }
+
+    body > header nav ul,
+    body > header nav ul[class] {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    body > header nav ul li {
+        flex: 1 0 auto;
+        min-width: 0;
+    }
+
+    body > header nav ul li a {
+        white-space: nowrap;
+    }
+}
+
+@media (max-height: 500px) {
+    body > header,
+    body > header[class] {
+        position: static;
+    }
+}
