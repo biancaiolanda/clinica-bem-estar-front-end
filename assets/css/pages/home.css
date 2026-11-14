@@ -1,45 +1,3 @@
-.cabecalho {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    padding: 1.25rem 0;
-    background-color: var(--color-white);
-    border-bottom: 3px solid var(--color-primary);
-    box-shadow: var(--shadow-sm);
-}
-
-.cabecalho__marca {
-    display: inline-block;
-    margin-bottom: 0.75rem;
-    color: var(--color-primary-dark);
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-bold);
-}
-
-.navegacao__lista {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1rem;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.menu-item {
-    display: inline-block;
-    padding: 0.5rem 0.75rem;
-    border-radius: var(--border-radius-sm);
-    color: var(--color-text);
-    font-weight: var(--font-weight-semibold);
-}
-
-.menu-item:hover,
-.menu-item:focus-visible {
-    background-color: var(--color-primary-light);
-    color: var(--color-primary-dark);
-}
-
 .principal {
     width: min(100% - 2rem, 960px);
     margin: 0 auto;
@@ -210,15 +168,6 @@
 }
 
 @media (max-width: 640px) {
-    .cabecalho {
-        position: static;
-        padding-block: 1rem;
-    }
-
-    .navegacao__lista {
-        gap: 0.25rem;
-    }
-
     .principal {
         width: min(100% - 1rem, 960px);
     }
@@ -232,32 +181,18 @@
     }
 }
 
-.cabecalho__marca,
-.navegacao,
 .rodape > p,
 .rodape > nav {
     width: min(100% - 2rem, 960px);
     margin-inline: auto;
 }
 
-.cabecalho__marca {
-    display: flex;
-    align-items: center;
-    min-height: 44px;
-}
-
-.navegacao__lista li {
-    min-width: 0;
-}
-
-.menu-item,
 .rodape a {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
 }
 
-.menu-item:focus-visible,
 .rodape a:focus-visible,
 .cta-principal:focus-visible,
 .cta-secundaria:focus-visible {
@@ -278,20 +213,4 @@
 .cta-secundaria {
     max-width: 100%;
     overflow-wrap: anywhere;
-}
-
-@media (max-width: 640px) {
-    .navegacao__lista li {
-        flex: 1 0 auto;
-    }
-
-    .menu-item {
-        white-space: nowrap;
-    }
-}
-
-@media (max-height: 500px) {
-    .cabecalho {
-        position: static;
-    }
 }
