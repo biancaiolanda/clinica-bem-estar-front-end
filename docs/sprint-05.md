@@ -31,7 +31,7 @@ Semanas 11 a 12.
 
 ## Testes realizados
 
-- xxxxxxxxxxxxxxxxxxxxxxx
+- US-504: controles com labels associados, fieldsets com legends, descrições referenciadas e campos obrigatórios; navegação por teclado, validação nativa com mensagem textual e foco visível verificados no navegador.
 - xxxxxxxxxxxxxxxxxxxxxxx
 - xxxxxxxxxxxxxxxxxxxxxxx.
 - xxxxxxxxxxxxxxxxxxxxxxx

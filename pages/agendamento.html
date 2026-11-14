@@ -9,21 +9,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/variable.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/pages/agendamento.css">
     <link rel="stylesheet" href="../assets/css/navigation-responsive.css">
 </head>
 <body>
     <header class="cabecalho">
-        <a href="../index.html" class="cabecalho__marca">Clínica Bem-Estar</a>
+        <a class="cabecalho__marca" href="../index.html" aria-label="Página inicial da Clínica Bem-Estar">
+            Clínica Bem-Estar
+        </a>
+
         <nav class="navegacao" aria-label="Navegação principal">
             <ul class="navegacao__lista">
-                <li class="menu-item"><a href="../index.html">Início</a></li>
-                <li class="menu-item"><a href="especialistas.html">Especialistas</a></li>
-                <li class="menu-item"><a href="servicos.html">Serviços</a></li>
-                <li class="menu-item"><a href="convenios.html">Convênios</a></li>
-                <li class="menu-item"><a href="agendamento.html">Pré-agendamento</a></li>
-                <li class="menu-item"><a href="faq.html">FAQ</a></li>
-                <li class="menu-item"><a href="como-chegar.html">Como Chegar</a></li>
+                <li><a class="menu-item" href="../index.html">Início</a></li>
+                <li><a class="menu-item" href="especialistas.html">Especialistas</a></li>
+                <li><a class="menu-item" href="servicos.html">Serviços</a></li>
+                <li><a class="menu-item" href="convenios.html">Convênios</a></li>
+                <li><a class="menu-item" href="agendamento.html">Pré-agendamento</a></li>
+                <li><a class="menu-item" href="faq.html">FAQ</a></li>
+                <li><a class="menu-item" href="como-chegar.html">Como Chegar</a></li>
             </ul>
         </nav>
     </header>
@@ -33,60 +38,67 @@
             <h1 id="agendamento-titulo" class="secao__titulo">Pré-agendamento Online</h1>
             <p class="secao__subtitulo">Preencha o formulário abaixo para solicitar seu pré-agendamento. Nossa equipe entrará em contato para confirmar dia e horário.</p>
 
-            <form class="formulario" action="#" method="post" novalidate>
-                <fieldset class="campo">
+            <form class="formulario" action="#" method="post">
+                <p id="dica-obrigatoriedade" class="campo__dica">Campos marcados com * são obrigatórios.</p>
+
+                <fieldset class="grupo-campos" aria-describedby="dica-obrigatoriedade">
                     <legend class="campo__label">Dados Pessoais</legend>
-                    <div class="campo__dica">Campos marcados com * são obrigatórios.</div>
+
+                    <div class="campo">
+                        <label for="nome" class="campo__label campo__label--obrigatorio">Nome completo</label>
+                        <input type="text" id="nome" name="nome" class="campo__input" required autocomplete="name" placeholder="Ex.: Maria da Silva Santos" aria-describedby="dica-nome erro-nome">
+                        <span id="dica-nome" class="campo__dica">Digite seu nome completo conforme documento.</span>
+                        <span id="erro-nome" class="campo__erro" hidden></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone" class="campo__label campo__label--obrigatorio">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" class="campo__input" required autocomplete="tel" placeholder="Ex.: (11) 99999-9999" aria-describedby="dica-telefone erro-telefone">
+                        <span id="dica-telefone" class="campo__dica">DDD + número. Usado para confirmação do agendamento.</span>
+                        <span id="erro-telefone" class="campo__erro" hidden></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email" class="campo__label campo__label--obrigatorio">E-mail</label>
+                        <input type="email" id="email" name="email" class="campo__input" required autocomplete="email" placeholder="Ex.: maria@email.com" aria-describedby="dica-email erro-email">
+                        <span id="dica-email" class="campo__dica">Receberemos a confirmação neste endereço.</span>
+                        <span id="erro-email" class="campo__erro" hidden></span>
+                    </div>
                 </fieldset>
 
-                <div class="campo">
-                    <label for="nome" class="campo__label campo__label--obrigatorio">Nome completo</label>
-                    <input type="text" id="nome" name="nome" class="campo__input" required autocomplete="name" placeholder="Ex.: Maria da Silva Santos" aria-describedby="dica-nome">
-                    <span id="dica-nome" class="campo__dica">Digite seu nome completo conforme documento.</span>
-                </div>
-
-                <div class="campo">
-                    <label for="telefone" class="campo__label campo__label--obrigatorio">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" class="campo__input" required autocomplete="tel" placeholder="Ex.: (11) 99999-9999" aria-describedby="dica-telefone">
-                    <span id="dica-telefone" class="campo__dica">DDD + número. Usado para confirmação do agendamento.</span>
-                </div>
-
-                <div class="campo">
-                    <label for="email" class="campo__label campo__label--obrigatorio">E-mail</label>
-                    <input type="email" id="email" name="email" class="campo__input" required autocomplete="email" placeholder="Ex.: maria@email.com" aria-describedby="dica-email">
-                    <span id="dica-email" class="campo__dica">Receberemos a confirmação neste endereço.</span>
-                </div>
-
-                <fieldset class="campo">
+                <fieldset class="grupo-campos" aria-describedby="dica-obrigatoriedade">
                     <legend class="campo__label">Agendamento</legend>
+
+                    <div class="campo">
+                        <label for="especialidade" class="campo__label campo__label--obrigatorio">Especialidade</label>
+                        <select id="especialidade" name="especialidade" class="campo__select" required aria-describedby="dica-especialidade erro-especialidade">
+                            <option value="">Selecione uma especialidade</option>
+                            <option value="cardiologia">Cardiologia</option>
+                            <option value="pediatria">Pediatria</option>
+                            <option value="ginecologia">Ginecologia e Obstetrícia</option>
+                            <option value="ortopedia">Ortopedia e Traumatologia</option>
+                            <option value="dermatologia">Dermatologia</option>
+                            <option value="neurologia">Neurologia</option>
+                        </select>
+                        <span id="dica-especialidade" class="campo__dica">Veja nossa <a href="especialistas.html">equipe de especialistas</a> para conhecer cada profissional.</span>
+                        <span id="erro-especialidade" class="campo__erro" hidden></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="data" class="campo__label campo__label--obrigatorio">Data preferencial</label>
+                        <input type="text" id="data" name="data" class="campo__input" required inputmode="numeric" autocomplete="off" maxlength="10" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" placeholder="DD/MM/AAAA" aria-describedby="dica-data erro-data">
+                        <span id="dica-data" class="campo__dica">Digite no formato DD/MM/AAAA. A data deve ser a partir de amanhã; a confirmação depende da disponibilidade.</span>
+                        <span id="erro-data" class="campo__erro" hidden></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="observacoes" class="campo__label">Observações</label>
+                        <textarea id="observacoes" name="observacoes" class="campo__textarea" placeholder="Ex.: Alergias, medicações em uso, preferência de horário, convênio..." aria-describedby="dica-observacoes"></textarea>
+                        <span id="dica-observacoes" class="campo__dica">Opcional. Informações que ajudem no seu atendimento (alergias, convênio, horário preferido, etc.).</span>
+                    </div>
                 </fieldset>
 
-                <div class="campo">
-                    <label for="especialidade" class="campo__label campo__label--obrigatorio">Especialidade</label>
-                    <select id="especialidade" name="especialidade" class="campo__select" required aria-describedby="dica-especialidade">
-                        <option value="">Selecione uma especialidade</option>
-                        <option value="cardiologia">Cardiologia</option>
-                        <option value="pediatria">Pediatria</option>
-                        <option value="ginecologia">Ginecologia e Obstetrícia</option>
-                        <option value="ortopedia">Ortopedia e Traumatologia</option>
-                        <option value="dermatologia">Dermatologia</option>
-                        <option value="neurologia">Neurologia</option>
-                    </select>
-                    <span id="dica-especialidade" class="campo__dica">Veja nossa <a href="especialistas.html">equipe de especialistas</a> para conhecer cada profissional.</span>
-                </div>
-
-                <div class="campo">
-                    <label for="data" class="campo__label campo__label--obrigatorio">Data preferencial</label>
-                    <input type="date" id="data" name="data" class="campo__input" required aria-describedby="dica-data">
-                    <span id="dica-data" class="campo__dica">Escolha uma data a partir de amanhã. A confirmação depende da disponibilidade.</span>
-                </div>
-
-                <div class="campo">
-                    <label for="observacoes" class="campo__label">Observações</label>
-                    <textarea id="observacoes" name="observacoes" class="campo__textarea" placeholder="Ex.: Alergias, medicações em uso, preferência de horário, convênio..." aria-describedby="dica-observacoes"></textarea>
-                    <span id="dica-observacoes" class="campo__dica">Opcional. Informações que ajudem no seu atendimento (alergias, convênio, horário preferido, etc.).</span>
-                </div>
-
+                <p id="mensagem-formulario" class="mensagem-formulario" role="status" aria-live="polite" aria-atomic="true"></p>
                 <button type="submit" class="botao">Solicitar Pré-agendamento</button>
             </form>
         </section>
