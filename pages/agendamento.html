@@ -87,8 +87,8 @@
 
                     <div class="campo">
                         <label for="data" class="campo__label campo__label--obrigatorio">Data preferencial</label>
-                        <input type="date" id="data" name="data" class="campo__input" required aria-describedby="dica-data erro-data">
-                        <span id="dica-data" class="campo__dica">Escolha uma data a partir de amanhã. A confirmação depende da disponibilidade.</span>
+                        <input type="text" id="data" name="data" class="campo__input" required inputmode="numeric" autocomplete="off" maxlength="10" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" placeholder="DD/MM/AAAA" aria-describedby="dica-data erro-data">
+                        <span id="dica-data" class="campo__dica">Digite no formato DD/MM/AAAA. A data deve ser a partir de amanhã; a confirmação depende da disponibilidade.</span>
                         <span id="erro-data" class="campo__erro" hidden></span>
                     </div>
 
