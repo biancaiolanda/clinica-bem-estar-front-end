@@ -16,8 +16,63 @@ function getTomorrowDate() {
     return `${year}-${month}-${day}`;
 }
 
-dateField.min = getTomorrowDate();
 form.noValidate = true;
+
+function parseBrazilianDate(value) {
+    const match = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(value);
+
+    if (!match) {
+        return null;
+    }
+
+    const [, dayText, monthText, yearText] = match;
+    const day = Number(dayText);
+    const month = Number(monthText);
+    const year = Number(yearText);
+    const isLeapYear = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+    const daysInMonth = [31, isLeapYear ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    if (month < 1 || month > 12 || day < 1 || day > daysInMonth[month - 1]) {
+        return null;
+    }
+
+    return `${yearText}-${monthText}-${dayText}`;
+}
+
+function formatDateInput(event) {
+    const field = event.currentTarget;
+    const cursorPosition = field.selectionStart === null ? field.value.length : field.selectionStart;
+    const digitsBeforeCursor = field.value.slice(0, cursorPosition).replace(/\D/g, '').length;
+    const digits = field.value.replace(/\D/g, '').slice(0, 8);
+    let formatted = digits;
+
+    if (digits.length > 4) {
+        formatted = `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`;
+    } else if (digits.length > 2) {
+        formatted = `${digits.slice(0, 2)}/${digits.slice(2)}`;
+    }
+
+    field.value = formatted;
+
+    let nextCursorPosition = 0;
+    let digitsSeen = 0;
+
+    while (nextCursorPosition < formatted.length && digitsSeen < digitsBeforeCursor) {
+        if (/\d/.test(formatted[nextCursorPosition])) {
+            digitsSeen += 1;
+        }
+
+        nextCursorPosition += 1;
+    }
+
+    if ((digitsBeforeCursor === 2 || digitsBeforeCursor === 4) && formatted[nextCursorPosition] === '/') {
+        nextCursorPosition += 1;
+    }
+
+    field.setSelectionRange(nextCursorPosition, nextCursorPosition);
+}
+
+dateField.addEventListener('input', formatDateInput);
 
 function getFieldError(field) {
     if (field.id === 'nome') {
@@ -61,10 +116,16 @@ function getFieldError(field) {
 
     if (field.id === 'data') {
         if (!field.value) {
-            return 'Selecione uma data preferencial.';
+            return 'Informe uma data preferencial.';
         }
 
-        if (field.value < dateField.min) {
+        const isoDate = parseBrazilianDate(field.value);
+
+        if (!isoDate) {
+            return 'Digite uma data válida no formato DD/MM/AAAA.';
+        }
+
+        if (isoDate < getTomorrowDate()) {
             return 'A data deve ser a partir de amanhã.';
         }
     }
