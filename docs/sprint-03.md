@@ -30,6 +30,7 @@ Semanas 8 a 10.
 ## Testes realizados
 
 - US-303: páginas Serviços e Convênios testadas no DevTools nas larguras 320, 360, 414, 640, 768, 900, 1024 e 1280px, sem rolagem horizontal e sem sobreposição de elementos.
+- US-304: Pré-agendamento, FAQ e Como Chegar testadas nas larguras 320, 360, 414, 640, 768, 900, 1024 e 1280px, sem rolagem horizontal; campos e botão de envio com área mínima de 44px.
 - xxxxxxxxxxxxxxxxxxxxxxx
 - xxxxxxxxxxxxxxxxxxxxxxx.
 - xxxxxxxxxxxxxxxxxxxxxxx
