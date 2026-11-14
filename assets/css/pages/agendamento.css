@@ -127,6 +127,30 @@
     font-size: 0.9rem;
 }
 
+.campo__erro {
+    display: block;
+    color: var(--color-error);
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-semibold);
+}
+
+.campo__erro[hidden] {
+    display: none;
+}
+
+.mensagem-formulario {
+    margin: 0;
+    font-weight: var(--font-weight-semibold);
+}
+
+.mensagem-formulario--erro {
+    color: var(--color-error);
+}
+
+.mensagem-formulario--aviso {
+    color: var(--color-text-secondary);
+}
+
 .campo__input,
 .campo__select,
 .campo__textarea {
@@ -151,6 +175,12 @@
 .campo__textarea:focus {
     border-color: var(--color-primary-dark);
     outline: 3px solid var(--color-primary-light);
+}
+
+.campo__input[aria-invalid="true"],
+.campo__select[aria-invalid="true"],
+.campo__textarea[aria-invalid="true"] {
+    border-color: var(--color-error);
 }
 
 .campo__textarea {

@@ -34,6 +34,7 @@
             <p class="secao__subtitulo">Preencha o formulário abaixo para solicitar seu pré-agendamento. Nossa equipe entrará em contato para confirmar dia e horário.</p>
 
             <form class="formulario" action="#" method="post">
+                <p id="mensagem-formulario" class="mensagem-formulario" role="status" aria-live="polite" aria-atomic="true"></p>
                 <p id="dica-obrigatoriedade" class="campo__dica">Campos marcados com * são obrigatórios.</p>
 
                 <fieldset class="grupo-campos" aria-describedby="dica-obrigatoriedade">
@@ -41,20 +42,23 @@
 
                     <div class="campo">
                         <label for="nome" class="campo__label campo__label--obrigatorio">Nome completo</label>
-                        <input type="text" id="nome" name="nome" class="campo__input" required autocomplete="name" placeholder="Ex.: Maria da Silva Santos" aria-describedby="dica-nome">
+                        <input type="text" id="nome" name="nome" class="campo__input" required autocomplete="name" placeholder="Ex.: Maria da Silva Santos" aria-describedby="dica-nome erro-nome">
                         <span id="dica-nome" class="campo__dica">Digite seu nome completo conforme documento.</span>
+                        <span id="erro-nome" class="campo__erro" hidden></span>
                     </div>
 
                     <div class="campo">
                         <label for="telefone" class="campo__label campo__label--obrigatorio">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" class="campo__input" required autocomplete="tel" placeholder="Ex.: (11) 99999-9999" aria-describedby="dica-telefone">
+                        <input type="tel" id="telefone" name="telefone" class="campo__input" required autocomplete="tel" placeholder="Ex.: (11) 99999-9999" aria-describedby="dica-telefone erro-telefone">
                         <span id="dica-telefone" class="campo__dica">DDD + número. Usado para confirmação do agendamento.</span>
+                        <span id="erro-telefone" class="campo__erro" hidden></span>
                     </div>
 
                     <div class="campo">
                         <label for="email" class="campo__label campo__label--obrigatorio">E-mail</label>
-                        <input type="email" id="email" name="email" class="campo__input" required autocomplete="email" placeholder="Ex.: maria@email.com" aria-describedby="dica-email">
+                        <input type="email" id="email" name="email" class="campo__input" required autocomplete="email" placeholder="Ex.: maria@email.com" aria-describedby="dica-email erro-email">
                         <span id="dica-email" class="campo__dica">Receberemos a confirmação neste endereço.</span>
+                        <span id="erro-email" class="campo__erro" hidden></span>
                     </div>
                 </fieldset>
 
@@ -63,7 +67,7 @@
 
                     <div class="campo">
                         <label for="especialidade" class="campo__label campo__label--obrigatorio">Especialidade</label>
-                        <select id="especialidade" name="especialidade" class="campo__select" required aria-describedby="dica-especialidade">
+                        <select id="especialidade" name="especialidade" class="campo__select" required aria-describedby="dica-especialidade erro-especialidade">
                             <option value="">Selecione uma especialidade</option>
                             <option value="cardiologia">Cardiologia</option>
                             <option value="pediatria">Pediatria</option>
@@ -73,12 +77,14 @@
                             <option value="neurologia">Neurologia</option>
                         </select>
                         <span id="dica-especialidade" class="campo__dica">Veja nossa <a href="especialistas.html">equipe de especialistas</a> para conhecer cada profissional.</span>
+                        <span id="erro-especialidade" class="campo__erro" hidden></span>
                     </div>
 
                     <div class="campo">
                         <label for="data" class="campo__label campo__label--obrigatorio">Data preferencial</label>
-                        <input type="date" id="data" name="data" class="campo__input" required aria-describedby="dica-data">
+                        <input type="date" id="data" name="data" class="campo__input" required aria-describedby="dica-data erro-data">
                         <span id="dica-data" class="campo__dica">Escolha uma data a partir de amanhã. A confirmação depende da disponibilidade.</span>
+                        <span id="erro-data" class="campo__erro" hidden></span>
                     </div>
 
                     <div class="campo">
