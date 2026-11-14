@@ -31,7 +31,8 @@ Semanas 11 a 12.
 
 ## Testes realizados
 
-- xxxxxxxxxxxxxxxxxxxxxxx
+- US-404: as sete páginas passaram no W3C Nu Validator sem mensagens na validação inicial. A revalidação após as mudanças de metadados foi bloqueada pelo HTTP 429 do serviço.
+- US-404: verificação local confirmou um título, uma descrição e um h1 por página, IDs únicos e referências locais válidas, exceto o script pendente da US-604.
 - xxxxxxxxxxxxxxxxxxxxxxx
 - xxxxxxxxxxxxxxxxxxxxxxx.
 - xxxxxxxxxxxxxxxxxxxxxxx
@@ -39,7 +40,7 @@ Semanas 11 a 12.
 
 ## Pendências
 
-- xxxxxxxxxxxxxxxxxxxxxxx
+- A referência `../assets/js/agendamento.js` em `pages/agendamento.html` aponta para um arquivo ainda inexistente; acompanhar na US-604 da Sprint 6.
 
 ## Resultado da Sprint
 
