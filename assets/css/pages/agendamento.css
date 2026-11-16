@@ -68,13 +68,13 @@
 
 .campo__dica {
     color: var(--color-text-secondary);
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
 }
 
 .campo__erro {
     display: block;
     color: var(--color-error);
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
 }
 
@@ -104,7 +104,7 @@
     box-sizing: border-box;
     padding: 0.8rem 1rem;
 
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-border-strong);
     border-radius: var(--border-radius-md);
 
     color: var(--color-text);
@@ -117,8 +117,9 @@
 .campo__input:focus,
 .campo__select:focus,
 .campo__textarea:focus {
-    border-color: var(--color-primary-dark);
-    outline: 3px solid var(--color-primary-light);
+    border-color: var(--color-focus);
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
 }
 
 .campo__input[aria-invalid="true"],
@@ -151,13 +152,13 @@
 }
 
 .botao:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-darker);
     transform: translateY(-2px) scale(1.01);
     box-shadow: var(--shadow-sm);
 }
 
 .botao:focus-visible {
-    outline: 3px solid var(--color-text);
+    outline: 3px solid var(--color-focus);
     outline-offset: 3px;
 }
 
