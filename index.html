@@ -27,7 +27,8 @@
         </a>
 
         <nav class="navegacao" aria-label="Navegação principal">
-            <ul class="navegacao__lista">
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal" hidden>Menu</button>
+            <ul class="navegacao__lista" id="menu-principal">
                 <li>
                     <a class="menu-item" href="index.html" aria-current="page">Início</a>
                 </li>
@@ -182,6 +183,7 @@
         </nav>
     </footer>
 
+    <script src="assets/js/menu.js" defer></script>
 </body>
 
 </html>
