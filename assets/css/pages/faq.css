@@ -80,6 +80,49 @@
     color: var(--color-primary-dark);
 }
 
+.faq-item__botao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    width: 100%;
+    min-height: 44px;
+    padding: 0.5rem;
+    border: 0;
+    border-radius: var(--border-radius-sm);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+}
+
+.faq-item__botao::after {
+    content: "+";
+    flex-shrink: 0;
+    font-size: 1.5em;
+}
+
+.faq-item__botao[aria-expanded="true"]::after {
+    content: "−";
+}
+
+.faq-item__botao:hover {
+    background-color: var(--color-white);
+}
+
+.faq-item__botao:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+.faq-item:focus-within {
+    transform: none;
+}
+
+.faq-item__texto[hidden] {
+    display: none;
+}
+
 .rodape {
     padding: var(--spacing-md) 0;
 
