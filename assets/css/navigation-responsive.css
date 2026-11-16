@@ -98,6 +98,23 @@ body > header .menu-botao[aria-expanded="true"] {
     background-color: var(--color-primary-light);
 }
 
+body > header .menu-botao::after {
+    content: " +";
+}
+
+body > header .menu-botao[aria-expanded="true"]::after {
+    content: " −";
+}
+
+body > header .menu-botao:hover {
+    background-color: var(--color-primary-light);
+}
+
+body > header .menu-botao:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
 @media (max-width: 640px) {
     body > header #menu-principal.menu-aberto {
         display: flex;
