@@ -1,4 +1,3 @@
-/* Navegação compartilhada entre as páginas institucionais. */
 body > header nav {
     width: min(100% - 2rem, 960px);
     margin-inline: auto;
@@ -53,5 +52,27 @@ body > footer a:focus-visible {
     body > header,
     body > header[class] {
         position: static;
+    }
+}
+
+body > header nav ul li a[aria-current="page"] {
+    color: var(--color-primary-darker);
+    font-weight: var(--font-weight-bold);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.3em;
+}
+
+@media (max-width: 640px) {
+    body > header nav ul li,
+    body > header nav .navegacao__lista li {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+
+    body > header nav ul li a,
+    body > header nav ul li a.menu-item {
+        white-space: normal;
+        overflow-wrap: anywhere;
     }
 }
