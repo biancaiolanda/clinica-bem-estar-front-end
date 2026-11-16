@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/pages/agendamento.css">
     <link rel="stylesheet" href="../assets/css/navigation-responsive.css">
+    <script src="../assets/js/menu.js" defer></script>
 </head>
 <body>
     <header class="cabecalho">
@@ -21,7 +22,8 @@
         </a>
 
         <nav class="navegacao" aria-label="Navegação principal">
-            <ul class="navegacao__lista">
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal" hidden>Menu</button>
+            <ul class="navegacao__lista" id="menu-principal">
                 <li><a class="menu-item" href="../index.html">Início</a></li>
                 <li><a class="menu-item" href="especialistas.html">Especialistas</a></li>
                 <li><a class="menu-item" href="servicos.html">Serviços</a></li>

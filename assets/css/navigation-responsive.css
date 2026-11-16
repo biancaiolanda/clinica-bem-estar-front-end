@@ -76,3 +76,41 @@ body > header nav ul li a[aria-current="page"] {
         overflow-wrap: anywhere;
     }
 }
+
+body > header .menu-botao {
+    min-width: 44px;
+    min-height: 44px;
+    margin-block: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-primary-dark);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--color-white);
+    color: var(--color-text);
+    font-weight: var(--font-weight-semibold);
+}
+
+body > header .menu-botao[hidden],
+body > header #menu-principal[hidden] {
+    display: none;
+}
+
+body > header .menu-botao[aria-expanded="true"] {
+    background-color: var(--color-primary-light);
+}
+
+@media (max-width: 640px) {
+    body > header #menu-principal.menu-aberto {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+    }
+
+    body > header #menu-principal.menu-aberto li {
+        flex: 0 0 auto;
+    }
+
+    body > header #menu-principal.menu-aberto a {
+        display: flex;
+    }
+}
