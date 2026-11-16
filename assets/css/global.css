@@ -34,12 +34,25 @@ a {
     transition: color var(--transition-default);
 }
 
-a:hover {
-    color: var(--color-primary);
+main a:not([class]) {
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
 }
 
-a:focus-visible {
-    outline: 3px solid var(--color-primary-dark);
+a:hover {
+    color: var(--color-primary-darker);
+}
+
+main a:not([class]):hover {
+    text-decoration-thickness: 0.16em;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--color-focus);
     outline-offset: 3px;
 }
 
@@ -69,6 +82,24 @@ h2 {
 h3 {
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+button {
+    overflow-wrap: anywhere;
+}
+
+p,
+strong,
+label,
+legend {
+    overflow-wrap: break-word;
 }
 
 p {
@@ -125,11 +156,11 @@ button {
 .btn-primary:hover {
     color: var(--color-white);
 
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-darker);
 }
 
 .btn-primary:focus-visible {
-    outline: 3px solid var(--color-text);
+    outline: 3px solid var(--color-focus);
     outline-offset: 3px;
 }
 
@@ -163,7 +194,7 @@ select {
 
     padding: 0.75rem 1rem;
 
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-border-strong);
     border-radius: var(--border-radius-md);
 
     color: var(--color-text);
@@ -174,9 +205,10 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-    border-color: var(--color-primary-dark);
+    border-color: var(--color-focus);
 
-    outline: 3px solid var(--color-primary-light);
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
 }
 
 section {

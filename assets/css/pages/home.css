@@ -117,7 +117,7 @@
 .cta-principal:hover,
 .cta-principal:focus-visible {
     color: var(--color-white);
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-darker);
 }
 
 .cta-secundaria {
@@ -213,4 +213,12 @@
 .cta-secundaria {
     max-width: 100%;
     overflow-wrap: anywhere;
+}
+
+.cta-principal:focus-visible {
+    outline-color: var(--color-focus);
+}
+
+.cta-secundaria:focus-visible {
+    outline-color: var(--color-white);
 }
